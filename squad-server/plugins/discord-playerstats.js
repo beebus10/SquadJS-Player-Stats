@@ -699,12 +699,14 @@ export default class DiscordPlayerStats extends DiscordBasePlugin {
         );
         // Send Message to Discord User's DM
         await message.author.send({
-          embed: {
+          embeds:[ 
+          {
             title: `Your linking code is: \`${linkCode}\``,
             description: `Please use \`!${this.options.linkInGameAccountCommand} ${linkCode}\` **IN GAME CHAT** to link your account.`,
             color: this.options.linkDiscordEmbedColor,
             timestamp: new Date().toISOString(),
           },
+          ]  
         });
       }
       return;
